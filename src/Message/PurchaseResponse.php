@@ -14,11 +14,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 
     public function isRedirect()
     {
-        if (isset($this->data['status']) && $this->data['status'] == true && $this->getRedirectUrl()) {
-            return true;
-        }
-
-        return false;
+        return isset($this->data['status']) && $this->data['status'] == true && $this->getRedirectUrl();
     }
 
     public function getRedirectUrl()

@@ -23,7 +23,7 @@ class RefundRequest extends AbstractRequest
         $data['transaction'] = $this->getTransactionReference();
         $data['currency'] = $this->getCurrency();
 
-        if ($this->getAmountInteger()) {
+        if ($this->getAmountInteger() !== 0) {
             $data['amount'] = $this->getAmountInteger();
         }
 

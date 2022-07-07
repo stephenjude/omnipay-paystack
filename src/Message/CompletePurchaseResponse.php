@@ -14,25 +14,19 @@ class CompletePurchaseResponse extends AbstractResponse
 
     public function getTransactionId()
     {
-        if (isset($this->data['data']) && $data = $this->data['data']) {
-            if ($data['reference']) {
-                return $data['reference'];
-            }
+        if (isset($this->data['data']) && $data = $this->data['data'] && $data['reference']) {
+            return $data['reference'];
         }
     }
 
     public function getMessage()
     {
-        if (isset($this->data['data']) && $data = $this->data['data']) {
-            if ($data['message']) {
-                return $data['message'];
-            }
+        if (isset($this->data['data']) && $data = $this->data['data'] && $data['message']) {
+            return $data['message'];
         }
 
-        if (isset($this->data['data']) && $data = $this->data['data']) {
-            if ($data['gateway_response']) {
-                return $data['gateway_response'];
-            }
+        if (isset($this->data['data']) && $data = $this->data['data'] && $data['gateway_response']) {
+            return $data['gateway_response'];
         }
 
         if (isset($this->data['message']) && $message = $this->data['message']) {
