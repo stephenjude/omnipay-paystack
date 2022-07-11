@@ -67,6 +67,7 @@ class GatewayTest extends GatewayTestCase
         $response = $this->gateway->refund($options)->send();
 
         $this->assertTrue($response->isSuccessful(), 'Refund is successful status');
+
         $this->assertEquals(static::PURCHASE_REFERENCE, $response->getTransactionReference(), 'Reference is as we gave it');
     }
 }
